@@ -1,0 +1,807 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mukti Lifestyle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- Styles -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/picks.css" rel="stylesheet">
+<link rel='stylesheet' id='prettyphoto-css' href="css/prettyPhoto.css" type='text/css' media='all'>
+<link href="css/fontello.css" type="text/css" rel="stylesheet">
+<!--[if lt IE 7]>
+            <link href="css/fontello-ie7.css" type="text/css" rel="stylesheet">  
+        <![endif]-->
+<!-- Google Web fonts -->
+<link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style>
+body {
+	padding-top: 0px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+.tblMap{
+	background-color:#fff;
+	margin-top:50px;
+	border:5px solid #fff;
+	box-shadow:0px 0px 5px #666;
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	height:70%;
+}
+#side_bar{
+	height:100%;
+	overflow:auto;
+}
+#side_bar ul.locations a{
+	text-decoration:none;
+	color:#000;
+	font-size:12px;
+}
+#side_bar ul.locations{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+#side_bar ul.locations li{
+	border-bottom:1px solid #ddd;
+	padding:10px 0px;
+}
+@media (max-width:480px){
+	.mapContainer{
+		width:100% !important;
+		float:none !important;
+	}
+	.tblMap{
+		padding-bottom:0px;
+   
+	}
+  .span12 {
+width: 97% !important;
+}
+	#side_bar{
+		height:200px !important;
+	}
+}
+
+</style>
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+<!-- Favicon -->
+<link rel="shortcut icon" href="img/favicon.ico">
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<!-- Load ScrollTo -->
+<script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+<!-- Load LocalScroll -->
+<script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+<!-- prettyPhoto Initialization -->
+<script type="text/javascript" charset="utf-8">
+          $(document).ready(function(){
+            $("a[rel^='prettyPhoto']").prettyPhoto();
+
+  /*
+  $('#frmApply').submit(function(){    
+            $.ajax({
+              url: 'mailApply.php',
+              data: m_data,
+              processData: false,
+              contentType: false,
+              type: 'POST',
+              dataType:'jqXHR',
+              success: function(response){
+                 //load json data from server and output message     
+                if(response.type == 'error'){ //load json data from server and output message   
+                   // $('#frmApply').submit(); 
+                    output = '<div class="error">'+response.text+'</div>';
+                }else{
+                    output = '<div class="success">'+response.text+'</div>';
+                }
+               
+              }
+            });         
+        }
+    });
+*/
+
+  $("#frmApply").submit(function(e){
+   
+      var frmData = $(this).serializeArray();
+      var formURL = $(this).attr("action");
+
+
+      $.ajax({
+          url:formURL,
+          data:frmData,
+          type:"POST",
+          success: function(data,textMsg,jqXHR){
+              alert('Thank you for submitting your entries');
+              $("#myModal").modal("hide");
+            },
+          error: function(jqXHR,textMsg,errorThrown){
+
+              alert("Invalid data. please check the form fields.");
+          }
+          });
+
+
+      e.preventDefault();
+      e.unbind();
+
+
+      });
+
+
+
+  });
+
+
+
+
+
+        </script>
+     <script type="text/javascript">
+ var RecaptchaOptions = {
+    theme : 'white'
+ };
+ </script>  
+</head>
+<body onload="initialize()">
+<!--******************** NAVBAR ********************-->
+<div class="navbar-wrapper">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container"> 
+        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. --> 
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+        <h1 class="brand"><a href="index.html#top"><img src="img/mukti-logo.png" class="logo" /></a></h1>
+        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+        <nav class="pull-right nav-collapse collapse">
+          <ul id="menu-main" class="nav">
+            <li><a title="portfolio" href="#portfolio">Portfolio</a></li>
+            <li><a title="team" href="#team">Team</a></li>
+            <li><a title="contact" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /.container --> 
+    </div>
+    <!-- /.navbar-inner --> 
+  </div>
+  <!-- /.navbar --> 
+</div>
+<!-- /.navbar-wrapper -->
+<div id="top"></div>
+<!-- ******************** HeaderWrap ********************-->
+	
+<div id="headerwrap">
+	<div style="position:relative;">
+    <div class="banner">
+    <img src="img/top-bg.jpg" class="img-responsive"/>  
+  </div>
+
+ <header class="clearfix" style="position:absolute;top:0px; margin:0 auto; width:100%;">
+		<h1>Shaping solutions that make this world a <br><span>better place</span></h1>
+  </header>
+    
+	</div>
+
+</div>
+<!--******************** Portfolio Section ********************-->
+<section id="portfolio" class="single-page scrollblock">
+  <div class="container">
+    <div class="align"><i class="icon-desktop-circled"></i></div>
+    <h1 id="folio-headline">Portfolio</h1>
+    <div class="row" style="margin-bottom:20px;">
+      <div class="span6 offset1">
+        <h3> Proprietary </h3>
+        <p>Businesses that are directly owned and invested in by us.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span3 offset1" align="center"> 
+       <!-- Start Item -->
+        <div class="item">
+          <div class="view view-third">
+            <div class="title">
+              <div>Harlem's Alive</div>
+            </div>
+            <div class="img"> <img src="img/HA.jpg"/> </div>
+            <div class="mask"> <a href="http://www.harlemsalive.com" target="_blank">
+              <p class="description"> Emotionally connecting business communities with their customers online and offline</p>
+              <i class="icon-info-sign ic-info"></i> </a> </div>
+          </div>
+        </div>
+        <!-- End Item --> 
+      </div>
+      <div class="span3" align="center"> 
+         <!-- Start Item -->
+        <div class="item">
+          <div class="view view-third">
+            <div class="title">
+              <div>Blunkit</div>
+            </div>
+            <div class="img"> <img src="img/Blunkit.jpg"/> </div>
+            <div class="mask"> <a href="http://www.blunkit.com" target="_blank">
+              <p class="description"> Giving consumers control over their leisure time with mood based discovery.</p>
+              <i class="icon-info-sign ic-info"></i> </a> </div>
+          </div>
+        </div>
+        <!-- End Item --> 
+         
+       
+        
+      </div>
+    </div>
+    <!-- /.row -->
+    
+    <div class="row" style="margin-bottom:20px;">
+      <div class="span6 offset1">
+        <h3> Advisory </h3>
+        <p>Businesses that we are advising or have advised in the past.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span3 offset1" align="center"> 
+        <!-- Start Item -->
+        <div class="item">
+          <div class="view view-third">
+            <div class="title">
+              <div>Employability Bridge</div>
+            </div>
+            <div class="img"> <img src="img/EB.jpg"/> </div>
+            <div class="mask"> <a href="http://www.employabilitybridge.com/" target="_blank">
+              <p class="description"> Enabling intelligent graduate hiring around the year at 10X reach and 0.1X cost</p>
+              <i class="icon-info-sign ic-info"></i> </a> </div>
+          </div>
+        </div>
+        <!-- End Item --> 
+        
+      </div>
+      <div class="span3" align="center"> 
+        
+        <!-- Start Item -->
+        <div class="item">
+          <div class="view view-third">
+            <div class="title">
+              <div>Silvan Innovation Labs</div>
+            </div>
+            <div class="img"> <img src="img/Silvan.jpg"/> </div>
+            <div class="mask"> <a href="http://www.silvanlabs.com/" target="_blank">
+              <p class="description"> Enabling smart connected spaces across individual, home and community</p>
+              <i class="icon-info-sign ic-info"></i> </a> </div>
+          </div>
+        </div>
+        <!-- End Item --> 
+        
+      </div>
+      <div class="span3" align="center"> 
+        
+        <!-- Start Item -->
+        <div class="item">
+          <div class="view view-third">
+            <div class="title">
+              <div>eBuild</div>
+            </div>
+            <div class="img"> <img src="img/TE.jpg"/> </div>
+            <div class="mask"> <a href="http://www.totalenvironment.in/customise" target="_blank">
+              <p class="description"> Enabling bespoke homes in large projects across layout, interiors, and services</p>
+              <i class="icon-info-sign ic-info"></i> </a> </div>
+          </div>
+        </div>
+        <!-- End Item --> 
+        
+      </div>
+    </div>
+    <!-- /.row -->
+    
+    <div class="row" style="margin-bottom:20px;">
+      <div class="span6 offset1">
+        <h3> Associated </h3>
+        <p>Businesses advised by or invested in by our leadership team.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span3 offset1" align="center"> 
+        <!-- Start Item -->
+        <div class="item">
+          <div class="view view-third">
+            <div class="title">
+              <div>JustEat (IN)</div>
+            </div>
+            <div class="img"> <img src="img/JE.jpg"/> </div>
+            <div class="mask"> <a href="http://www.justeat.in/" target="_blank">
+              <p class="description"> Providing consumers choice and assurance for ordering food online</p>
+              <i class="icon-info-sign ic-info"></i> </a> </div>
+          </div>
+        </div>
+        <!-- End Item --> 
+        
+      </div>
+      <div class="span3" align="center"> 
+        
+        <!-- Start Item -->
+        <div class="item">
+          <div class="view view-third">
+            <div class="title">
+              <div>AlmaMater</div>
+            </div>
+            <div class="img"> <img src="img/AM.jpg"/> </div>
+            <div class="mask"> <a href="http://www.almamaterstore.in/" target="_blank">
+              <p class="description"> Fulfilling the aspirational needs of Indian Youth </p>
+              <i class="icon-info-sign ic-info"></i> </a> </div>
+          </div>
+        </div>
+        <!-- End Item --> 
+        
+      </div>
+      <div class="span3" align="center"> 
+        
+        <!-- Start Item -->
+        <div class="item">
+          <div class="view view-third">
+            <div class="title">
+              <div>Stayzilla</div>
+            </div>
+            <div class="img"> <img src="img/SZ.jpg"/> </div>
+            <div class="mask"> <a href="http://www.stayzilla.com/" target="_blank">
+              <p class="description"> Providing assurance for stay across India</p>
+              <i class="icon-info-sign ic-info"></i> </a> </div>
+          </div>
+        </div>
+        <!-- End Item --> 
+        
+      </div>
+    </div>
+    <!-- /.row --> 
+    
+  </div>
+  <!-- /.container --> 
+</section>
+<hr>
+<!--******************** Team Section ********************-->
+<section id="team" class="single-page scrollblock">
+  <div class="container">
+  <div class="align"><i class="icon-group-circled"></i></div>
+  <h1>Why Join Us</h1>
+  <div class="row" style="margin-bottom:15px;">
+    <div class="span8 team-description offset2">
+      <ul class="bullets">
+        <li>Be part of a small tech-hacker crack team that will power a global portfolio of leisure and entertainment services businesses
+</li>
+        <li>Shape solutions that enable scale-able integration across open source technologies</li>
+        <li>Create technology "wow" by designing a new frontier for omni-channel engagement</li>
+        <li>Work with concepts that encompass enterprise, mobile, social, and gaming</li>
+        <li>Enjoy a flexi-time work culture that balances adrenaline bursts with personal time</li>
+        <li>Celebrate tech-nerdness, participate in global initiatives, and shape local tech forum
+</li>
+      </ul>
+      <div> 
+        <!-- ./span8 --> 
+        
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+  <hr>
+  <div class="row">
+    <div class="span12">
+      <h1>Our Leadership team</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2 offset1 text-center">
+      <div class="teamalign"> <img class="team-thumb img-circle" src="img/portrait-1.jpg" alt=""> <br>
+      </div>
+    </div>
+    <!-- ./span2 -->
+    
+    <div class="span8 team-description">
+      <p>Joe Roque:  A non-techie, Joe Roque Fernandes has never written a line of code (except when forced in college), yet works exclusively on tech solutions.  His tech journey started with advising eCommerce startups and Wall-Street Banks  (while at <a href="http://www.mckinsey.com/" target="_blank">McKinsey and Company</a>), then setting up a think tank on the future of technology while at <a href="https://research.everestgrp.com/" target="_blank">Everest</a>), leading to investing and mentoring tech-startups through <a href="http://www.indianangelnetwork.com/" target="_blank">IAN</a>, and finally setting up his own technology incubator Mukti Lifestyle (the portfolio above).  He is an avid musician working with the <a href="http://kalavantcenter.org/" target="_blank">Kalavant Center</a> to produce an album, Aahsh, that defines a contemporary form of Indian Classical Ragas</p>
+      <ul class="team-icons">
+        <li> <a href="https://www.linkedin.com/pub/joe-roque-fernandes/5/83b/b43" target="_blank"><i class="icon-linkedin-circled linkedin"></i></a> </li>
+        <li> <a href="mailto:joe@muktlifestyle.com">
+          <div class="email"><i class="icon-mail-1"></i></div>
+          </a> </li>
+      </ul>
+      <div> 
+        <!-- ./span8 --> 
+        
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+  
+  <div class="row">
+    <div class="span2 offset1">
+      <div class="teamalign"> <img class="team-thumb img-circle" src="img/portrait-2.jpg" alt=""> </div>
+    </div>
+    <!-- ./span2 -->
+    
+    <div class="span8 team-description">
+      <p>
+      Pavan K Murthy - "p6" is at his lucid best at midnight, when he is likely to be coding or <a target="_blank" href="http://freenode.net">socializing in habitat</a>. His tech journey has been centred around a history of OSS contributions, healthy evangelism towards software freedom & cross-stack roles as a developer / architect - mentionably in the PaaS, CRM, Digital Publishing industries. While away from work - he maybe <a target="_blank" href="http://grahana.net/">writing</a> (occasionally), dabbling with Indian classical music, <a target="_blank" href="http://www.bas.org.in">Amateur Astronomy</a> or <a target="_blank" href="http://grahana.net/gallery/v/himalaya">absconding in wilderness</a>.
+      </p>
+      <ul class="team-icons">
+        <!--li> <a href="http://github.com/p6" target="_blank"><i class="icon-github-circled github"></i></a></li-->
+        <li> <a href="http://in.linkedin.com/in/pavankmurthy" target="_blank"><i class="icon-linkedin-circled linkedin"></i></a> </li>
+        <li> <a href="mailto:pavan@muktlifestyle.com">
+          <div class="email"><i class="icon-mail-1"></i></div>
+          </a> </li>
+      </ul>
+      <div> 
+        <!-- ./span8 --> 
+        
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+  
+  <hr>
+  <div class="row">
+    <div class="span12">
+      <h1>Join our Senior team</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2 offset1">
+      <div class="teamalign"> <img class="team-thumb" src="img/html5.png" alt=""> </div>
+    </div>
+    <!-- ./span2 -->
+    
+    <div class="span8 team-description">
+    	<h4>UI/UX Guru</h4>
+      <p>Keywords: Java-Script, jQuery, jQuery Mobile, JS MVC (Angular / Ember/ Backbone), HTML5, CSS3,PhoneGap, Cordova.</p>
+      <a data-toggle="collapse" data-parent="#accordion" href="index.html#collapseOne" class="btn">Why Me</a> 
+      		
+      <!-- Accordion Panels -->
+      
+      <div id="accordion" class="panel-group">
+        <div class="panel panel-default">
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul class="bullets">
+                <li>Build cross platform, seamless, elegant UX for a series of dynamic digital leisure businesses</li>
+                <li>Elegantly solve different aspects of consumer engagement - each its own complexity - through gaming combining browser and mobile features</li>
+                <li>Gain cutting edge experience with ui/ux wizardry involving the best of JS - Angular, Ember, Backbone (or brew your own)</li>
+                <li>Deliver native/semi native mobile cum browser experiences through a combination of cross-platform approaches (PhoneGap/Cordova and jqmobile) while negotiating platform specific wrinkles.</li>
+                <li>Get known for rapid hacks - taking novel ideas with dynamic requirements to implementation in short TTL</li>
+              </ul>
+        <a href="https://docs.google.com/forms/d/1_oveWt2YAYxu44wYq4o0LehetvfjZlJ4KelspGt-8ls/viewform" class="btn" style="margin:1em 0px;" target="_new">Apply Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- End Accordion Panels --> 
+        
+
+        <div> 
+          <!-- ./span8 --> 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+  
+  <div class="row">
+    <div class="span2 offset1">
+      <div class="teamalign"> <img class="team-thumb" src="img/code.png" alt=""> </div>
+    </div>
+    <!-- ./span2 -->
+    
+    <div class="span8 team-description">
+    <h4>Backend Guru</h4>
+      <p>Keywords: PHP5, MySQL, OOPS, Drupal, REST APIs, 1 or more PHP frameworks (Symfony / Yii / Zend / CI), Dev-Ops skills (Chef, Puppet), AWS, Shell scripting</p>
+      <a data-toggle="collapse" data-parent="#accordion" href="index.html#backendguru" class="btn">Why Me</a> 
+      
+      <!-- Accordion Panels -->
+      
+      <div id="accordion" class="panel-group">
+        <div class="panel panel-default">
+          <div id="backendguru" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul class="bullets">
+                <li>Work on the heavy lifting machinery of server side platform involving a multitude of technology stacks (LAMP, MEAN);</li>
+                <li>Negotiate necessary complexity of scale, performance and reliability for a novel eco system business.</li>
+                <li>Develop innovative digital marketing tool sets to enable business to get themselves heard - locally and globally.</li>
+                <li>Gain enviable real life experience with design patterns and system architecture.</li>
+                <li>Build beautiful, pragmatic RESTful APIs for integrations with consumer and business user applications</li>
+                <li>Be known for fluency across the depth and breadth of the stack: achieving credible technology expertise on all bases</li>
+              </ul>
+        <a href="https://docs.google.com/forms/d/1_oveWt2YAYxu44wYq4o0LehetvfjZlJ4KelspGt-8ls/viewform" class="btn" style="margin:1em 0px;" target="_new">Apply Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- End Accordion Panels --> 
+        
+
+        <div> 
+          <!-- ./span8 --> 
+          
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+    <!-- /.row -->   
+
+  <hr>
+  <div class="row">
+    <div class="span12">
+      <h1>Join our Developer team</h1>
+      <p>Apply if you aspire to become a geeky hacker, learning from real code masters, and wamt to work on something awesome, unique and lasting</p>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="span2 offset1">
+      <div class="teamalign"> <img class="team-thumb" src="img/ui.png" alt=""> </div>
+    </div>
+    <!-- ./span2 -->
+    
+    <div class="span8 team-description">
+    <h4>UI/UX Developer</h4>
+      <p>Keywords: Responsive web, Mobile app , Photoshop, HTML(5), CSS(3), Bootstrap, Browser-compliance, Dreamweaver, Java-Script </p>
+      <a data-toggle="collapse" data-parent="#accordion" href="index.html#ui-developer" class="btn">Why Me</a> 
+      
+      <!-- Accordion Panels -->
+      
+      <div id="accordion" class="panel-group">
+        <div class="panel panel-default">
+          <div id="ui-developer" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul class="bullets">
+<li>Work on an omni-channel (mobile, social, web, offline) marketing platform</li>
+<li>Conceptualise and create graphical user interface for website and mobile app</li>
+<li>Create mock-ups and working prototypes</li>
+<li>Work on user persona, use case scenarios, wire frame design, layouts and navigational structure for assigned project.</li>
+
+              </ul>
+        <a href="https://docs.google.com/forms/d/1_oveWt2YAYxu44wYq4o0LehetvfjZlJ4KelspGt-8ls/viewform" class="btn" style="margin:1em 0px;" target="_new">Apply Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- End Accordion Panels --> 
+        
+
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <div class="row">
+    <div class="span2 offset1">
+      <div class="teamalign"> <img class="team-thumb" src="img/drupal.png" alt="" style="max-height:140px;"> </div>
+	</div>
+    <!-- ./span2 -->
+    
+    <div class="span8 team-description">
+    <h4>PHP Developer</h4>
+      <p>Keywords: PHP5, MySQL, Drupal, JavaScript, jQuery </p>
+      <a data-toggle="collapse" data-parent="#accordion" href="index.html#php-developer" class="btn">Why Me</a> 
+      
+      <!-- Accordion Panels -->
+      
+      <div id="accordion" class="panel-group">
+        <div class="panel panel-default">
+          <div id="php-developer" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul class="bullets">
+<li>Work on business and consumer facing ends of a growing tech stack involving cutting edge web technologies.</li>
+<li>Develop and extend our business and consumer platforms built on top of Drupal with custom modules, themes and external components leveraging the best of community contributed code</li>
+<li>Provide functional & operational support for business & marketing teams.</li>
+
+              </ul>
+        <a href="https://docs.google.com/forms/d/1_oveWt2YAYxu44wYq4o0LehetvfjZlJ4KelspGt-8ls/viewform" class="btn" style="margin:1em 0px;" target="_new">Apply Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- End Accordion Panels --> 
+
+      </div>
+    </div>
+
+    
+  </div>
+    <!-- /.row -->   
+
+  <div class="row">
+    <div class="span2 offset1">
+      <div class="teamalign"> <img class="team-thumb" src="img/qa.png" alt="" style="max-height:120px;margin-top:30px;"/> </div>    
+    </div>
+    <!-- ./span2 -->
+    
+    <div class="span8 team-description">
+    <h4>QA Engineer</h4>
+      <p>Keywords: Testing (Selenium), Performance Analysis (JMeter, AB), Coding (PHP)</p>
+      <a data-toggle="collapse" data-parent="#accordion" href="index.html#qa-engineer" class="btn">Why Me</a> 
+      
+      <!-- Accordion Panels -->
+      
+      <div id="accordion" class="panel-group">
+        <div class="panel panel-default">
+          <div id="qa-engineer" class="panel-collapse collapse">
+            <div class="panel-body">
+              <ul class="bullets">
+<li>Work closely with developers to roll out test-plans and cases and participation in debugging / delegating issues.</li>
+<li>Demostrate a rigorous appetite for use-case / behavioral detailing and corner cases</li>
+              </ul>
+        <a href="https://docs.google.com/forms/d/1_oveWt2YAYxu44wYq4o0LehetvfjZlJ4KelspGt-8ls/viewform" class="btn" style="margin:1em 0px;">Apply Now</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- End Accordion Panels --> 
+        
+
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+      <hr>
+  </div>
+  
+  <!-- /.container --> 
+</section>
+<!--******************** Contact Section ********************-->
+<section id="contact" class="single-page scrollblock">
+      <div class="container">
+
+        <div class="align"><i class="icon-mail-2"></i></div>
+        <h1>Contact us</h1>
+         <p style="margin-top:10px;">If you're interested in learning more, get in touch:</p>
+           <div class="row">
+      <div class="span6">
+
+        <strong><a href="javascript:myclick(0)">United States</a></strong><br>
+
+Harlem's Alive,<br> 
+<!--275 Malcolm X Blvd, New York, NY 10027, <br>
+United States<br>-->
+(212) 665-7010
+
+T: +1-212-532-2011<br>
+E: contact@muktilifestyle.com<br>
+        </div>
+
+      <div class="span6">
+        <strong><a href="javascript:myclick(1)">India</a></strong><br>
+
+Mukti Lifestyle Pvt. Ltd.<br>
+<!-- Global INcubation SERVices (GINSERV),<br>
+CA Site No 1, JSS Institution Campus, HAL III Stage,<br>
+Behind Hotel Leela Palace, Kodihalli<br>
+Bangalore - 560 008<br> -->
+
+T: +91-80-2520 0916 / 2520 0500<br>
+E: contact@muktilifestyle.com<br>
+        </div>
+
+    </div>
+        <div class="row">
+          <div class="span12">
+          
+<div class="tblMap">
+        <div id="map_canvas" style="width:100%;height:300px;margin-right:10px;"></div>        
+</div>          
+          
+      
+          </div>
+          
+
+	</div>
+ 
+    
+</div>
+</div>
+
+</section>
+  <!-- /.Contact Section --> 
+
+<div class="footer-wrapper">
+  <div class="container">
+    <footer> <small>&copy; 2014 Mukti Lifestyle. All rights reserved.</small> </footer>
+  </div>
+  <!-- ./container --> 
+</div>
+
+<!-- Modal -->
+ <form name="frmApply" method="post" action="http://harlemsalive.com/mukti/mailApply1.php" class="cform-form" id="frmApply">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Apply Now 
+        
+        
+        <select class="cform-text" style="margin-top:5px;margin-left:10px;" name="apply_now">
+        	<option value="UX/UI guru">UX/UI guru</option>
+        	<option value="Backend guru">Backend guru</option>            
+        	<option value="UX/UI developer">UX/UI developer</option>
+        	<option value="PHP developer">PHP developer</option>
+        	<option value="QA Engineer">QA Engineer</option>
+        </select>
+        </h4>
+      </div>
+      <div class="modal-body">
+       
+<div class="cform" id="theme-form">      
+			
+                <div class="row">
+                  <div class="span5"> <span class="your-name">
+                    <input type="text" name="your_name" placeholder="Your Name" class="cform-text" title="your name">
+                    </span> </div>
+                  <div class="span5"> <span class="your-email">
+                    <input type="email" name="your_email" placeholder="Your Email" class="cform-text" title="your email">
+                    </span> </div>
+
+                  <div class="span5"> <span class="your-phone">
+                    <input type="text" name="your_phone" placeholder="Your Phone" class="cform-text" title="your phone" maxlength="12">
+                    </span> </div>
+
+                  <div class="span5"> <span class="social-links">
+                    <span class="icon-linkedin linkedin"></span><input type="text" name="linkedin_url" placeholder="LinkedIn URL" class="cform-text" title="Applying for position">
+                    </span> </div>
+
+                  <div class="span5"> <span class="social-links">
+                    <span class="icon-facebook-squared facebook"></span><input type="text" name="facebook_url" placeholder="Facebook URL" class="cform-text" title="Applying for position">
+                    </span> </div>
+
+                  <div class="span5"> <span class="join-reason">
+                    <textarea name="join_reason" placeholder="Why do you want to Join?" class="cform-text" title="Applying for position"></textarea>
+                    </span> </div>
+
+                  <div class="span5"> <span class="applying-for">
+                  <small><strong>Attach your profile (if you have one)</strong></small>
+                    <input type="file" name="file_attach">
+                    </span> </div>
+
+                 <div class="span5"> <span class="applying-for">
+                <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Le9df0SAAAAALOEpTx5GKlBmweIbZMAuWquKop-"></script>
+
+	<noscript>
+  		<iframe src="http://www.google.com/recaptcha/api/noscript?k=6Le9df0SAAAAALOEpTx5GKlBmweIbZMAuWquKop-" height="300" width="500" frameborder="0"></iframe><br/>
+  		<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+  		<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
+	</noscript>  
+         
+            
+            
+          
+                    </span> </div> 
+                </div>
+
+		
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary pull-left " style="margin-right:10px;" id="submit_btn">Submit</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>        
+      </div>
+           
+    </div>
+  </div>
+</div>
+ </form>   
+<!-- Loading the javaScript at the end of the page --> 
+<script type="text/javascript" src="js/bootstrap.js"></script> 
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="js/site.js"></script>
+</body>
+</html>
