@@ -219,6 +219,14 @@ ul#menu-main > li > a:hover {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 }
+.nav li.active a{
+    background: #f0bf00 !important;
+	padding: 9px 15px  !important;
+	border-radius: 3px  !important; 
+	-webkit-border-radius: 3px  !important;
+	-moz-border-radius: 3px  !important;
+}
+
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
 	text-shadow: none;
 }
@@ -399,7 +407,11 @@ section.single-page h1 {
 section#portfolio {
 	padding-bottom: 0;
 }
-section#portfolio h1 {
+section#aboutus {
+	padding-bottom:0;
+	
+	}
+section#portfolio h1,section#aboutus h1, section#joinus h1 {
 	font-size: 3em;
 	margin-bottom: 1em;
 	margin-top: 0.5em;
@@ -416,7 +428,9 @@ section#portfolio .entry-content {
 	margin: 1em 0 2.5em;
 }
 section#team .align,
-section#portfolio .align {
+section#portfolio .align,
+section#aboutus .align,section#joinus .align
+,section#openings .align {
 	text-align:center;
 	margin-top:10px;
 	margin-bottom:20px;
@@ -540,7 +554,7 @@ article.post {
 article .inside {
 	margin: 18px 24px 24px;
 	padding-top: 1em;
-	background: url("http://harlemsalive.com/mukti/img/dot-row-2.png") repeat-x scroll 0 0 transparent !important;
+	background: url("../img/dot-row-2.png") repeat-x scroll 0 0 transparent !important;
 }
 .post-date {
 	color: #A5A5A2;
@@ -702,7 +716,7 @@ hr.featurette-divider {
 	margin: 3em 0;
 	border-width: 0;
 	height: 9px;
-	background: url("http://harlemsalive.com/mukti/img/dot-row-3-lt.png") repeat-x;
+	background: url("../img/dot-row-3-lt.png") repeat-x;
 }
 /* ---------------------------------------------------------------------------------------------------------- 
 06 Footer ------------------------------------------------------------
@@ -823,6 +837,40 @@ footer p {
 	width: auto;
 	height: auto;
 }
+.btn-openings {
+	font-family: 'Patua One', cursive;
+	color: #333;
+	width:200px;
+	text-shadow: none;
+	font-size: 16px; /* 21px */
+	padding:10px;
+	letter-spacing: 0.05em;
+	display: block;
+	border: 0;
+	text-transform: none;
+	background: #f0bf00 !important;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	margin:10px 0px;
+	text-align:center;
+	text-decoration:none;
+}
+.btn-openings:link, .btn-openings:visited {
+	color: #333;
+	text-decoration:none;
+}
+.btn-openings:hover {
+	background: #f0bf00 !important;
+	text-decoration:none;
+}
+.navbar-inverse .btn-openings-navbar {
+	width: auto;
+	height: auto;
+}
 
 .team-description{
 	margin-top:20px;	
@@ -872,6 +920,25 @@ footer p {
 	position:absolute;
 	left:-25px;
 }
+/***** subbullets**/
+.subbullets{
+	 list-style:none;
+	 padding:0px;
+	text-indent: 0em;	
+	padding-left:1em;
+}
+.subbullets li{
+	padding:10px 0px;	
+	margin-left:20px;
+}
+.subbullets li:before{
+	content:"\2022";
+	color:#f0bf00;
+	position:absolute;
+	left:-25px;
+	font-size:40px;
+}
+	/***** subbullets**/
 
 #map,
 #map-property{
@@ -1093,6 +1160,7 @@ section#portfolio{
 overflow: hidden;}
 .navbar-inverse .navbar-inner{
 	background-color:#0b333f !important;}
+	
 }
     
     /* Smartphones (portrait and landscape) ----------- */
@@ -1209,7 +1277,10 @@ margin:10px;
 .span6{
 	padding:5px 0 !important;
 }
-
+section#aboutus{ padding-top:5em;}
+ section#team{ padding-top:5.4em;}
+section#joinus{ padding-top:5.4em;}
+section#openings{ padding-top:5.4em;}
 }
 
 	/* Smartphones (landscape) ----------- */
@@ -1217,6 +1288,11 @@ margin:10px;
  #feature-headline {
  font-size: 32px; /* 34px */
 }
+section#portfolio{ padding-top:5.6em !important;}
+section#aboutus{ padding-top:5em;}
+ section#team{ padding-top:5.4em !important;}
+section#joinus{ padding-top:5.4em;}
+section#openings{ padding-top:5.6em !important;}
 }
 	
 	/* Smartphones (portrait) ----------- */
@@ -1236,6 +1312,10 @@ font-size: 1.9em;
 line-height: 1em;
 }
 section#portfolio{ padding-top:4.75em;}
+section#aboutus{ padding-top:5em;}
+ section#team{ padding-top:5.4em;}
+section#joinus{ padding-top:5.4em;}
+section#openings{ padding-top:5.4em;}
 
 }
 	

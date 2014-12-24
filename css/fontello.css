@@ -2,7 +2,7 @@
  @font-face {
  font-family: 'fontello';
  src: url("../font/fontello.eot?6946176");
- src: url("../font/fontello.eot?6946176") format('embedded-opentype'), url("../font/fontello.woff?6946176") format('woff'), url("../font/fontello.ttf?6946176") format('truetype'), url("../font/fontello.svg?6946176") format('svg');
+ src: url("../font/fontello.eot?6946176#iefix") format('embedded-opentype'), url("../font/fontello.woff?6946176") format('woff'), url("../font/fontello.ttf?6946176") format('truetype'), url("../font/fontello.svg?6946176#fontello") format('svg');
  font-weight: normal;
  font-style: normal;
 }
@@ -354,4 +354,6 @@
 .icon-rocket:before {
 	content: '🚀';
 } /* '\1f680' */
-.icon-github-circled:before { content: '\e8b1'; } /* '' */
+.icon-info-circled:before{
+	content:'\e705';
+}

@@ -6,9 +6,7 @@
 		    // Localscrolling 
     		$('#nav-main, .brand').localScroll();
      		$('#news, .container').localScroll();
-$('[data-spy="scroll"]').each(function () {
-  var $spy = $(this).scrollspy('refresh')
-});
+
 	});
 	
 	
@@ -41,11 +39,11 @@ function initialize() {
   // Set up three markers with info windows
   // add the points
   var point = new google.maps.LatLng(40.781266,-73.825461);
-  var marker = createMarker(point,"United States","Harlem's Alive,<br> 275 Malcolm X Blvd, New York, NY 10027, <br>United States<br>(212) 665-7010<br>T: +1-212-532-2011<br>E: contact@muktilifestyle.com");
+  var marker = createMarker(point,"United States","Harlem's Alive,<br> 275 Malcolm X Blvd, New York, NY 10027, <br>United States<br>(212) 665-7010");
 
 
   var point = new google.maps.LatLng(12.9624445,77.649002);
-  var marker = createMarker(point,"India","<strong>Mukti Lifestyle (India)</strong><br>Global INcubation SERVices (GINSERV)<br>, CA Site No 1, JSS Institution Campus, HAL III Stage, <br>Behind Hotel Leela Palace, Kodihalli Bangalore - 560 008<br>T: +91-80-2520 0916 / 2520 0500<br>E: contact@muktilifestyle.com");
+  var marker = createMarker(point,"India","<strong>Mukti Lifestyle (India)</strong><br>Global INcubation SERVices (GINSERV)<br>, CA Site No 1, JSS Institution Campus, HAL III Stage, <br>Behind Hotel Leela Palace, Kodihalli Bangalore - 560 008")
 
 
 

@@ -1565,7 +1565,7 @@ table {
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("http://harlemsalive.com/mukti/img/glyphicons-halflings-white.png");
+  background-image: url("../img/glyphicons-halflings-white.png");
 }
 
 .icon-glass {
